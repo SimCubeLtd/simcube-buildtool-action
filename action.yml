@@ -1,14 +1,5 @@
-name: Bash Action
-description: A sample GitHub Action written in Bash
-
-inputs:
-  command:
-    description: The command to run. Either "greet" or "error"
-    required: false
-    default: greet
-  who:
-    description: If the command is greet, the name to greet
-    required: false
+name: SimCube BuildTool
+description: Executes the SimCube Build Tool with the Supplied ENVs.
 
 runs:
   using: composite
@@ -16,7 +7,7 @@ runs:
     - run: echo "::add-matcher::${GITHUB_ACTION_PATH}/matcher.json"
       shell: bash
     - name: Run Script
-      run: ${GITHUB_ACTION_PATH}/script.sh ${{ inputs.command }} ${{ inputs.who }}
+      run: ${GITHUB_ACTION_PATH}/script.sh
       shell: bash
     - run: echo "::remove-matcher owner=bash-action::"
       shell: bash
