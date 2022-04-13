@@ -2,12 +2,14 @@
 
 set -e
 
-command="$1"
-who="$2"
+BuildToolPath=${SIMCUBE_DOTNET_TOOL_PATH:-/home/prom3theu5/.dotnet/tools}
 
-if [[ $command == "greet" ]]; then
-  echo "hello, $who"
-elif [[ $command == "error" ]]; then
-  echo "ERROR: script.sh, line 11: this is not so good"
-  exit 1
+echo "SimCube.BuildTool"
+if bash -c ${BuildToolPath}/SimCube.BuildTool; then
+    # no op
+    echo "Successfully Completed"
+else
+    exit_code=$?
+    echo "ERROR: running '${BuildToolPath}/SimCube.BuildTool', exited with $exit_code"
+    exit $exit_code
 fi
