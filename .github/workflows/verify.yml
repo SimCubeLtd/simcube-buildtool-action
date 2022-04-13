@@ -40,16 +40,9 @@ jobs:
       - uses: actions/checkout@v2
 
       - uses: ./
-        with:
-          command: greet
-          who: world
-
-      - uses: ./
         id: error_step
         continue-on-error: true
-        with:
-          command: error
-
+      
       - name: ensure error command failed
         if: steps.error_step.outcome == 'success'
         run: exit 1
