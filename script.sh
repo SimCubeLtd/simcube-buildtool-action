@@ -5,7 +5,7 @@ set -e
 BuildToolPath=${SIMCUBE_DOTNET_TOOL_PATH:-/home/prom3theu5/.dotnet/tools}
 
 echo "SimCube.BuildTool"
-if bash -c ${BuildToolPath}/SimCube.BuildTool; then
+if bash -c "${BuildToolPath}/SimCube.BuildTool"; then
     # no op
     echo "Successfully Completed"
 else
