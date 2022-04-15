@@ -1,12 +1,12 @@
 name: SimCube BuildTool
-description: Executes the SimCube Build Tool with the Supplied ENVs.
+description: Executes the SimCube Build Tool.
 
 inputs:
   packableProjects:
     description: Base64 encoded json payload for Packable Project settings.
     required: false
     default: "e30="
-  imageDetails:
+  containerConfig:
     description: Base64 encoded json payload for OCI Images to Build.
     required: false
     default: "e30="
