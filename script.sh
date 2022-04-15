@@ -6,7 +6,7 @@ zero=0;
 
 echo "SimCube.BuildTool"
 
-if bash -c "${SIMCUBE_DOTNET_TOOL_PATH}/SimCube.BuildTool -t DotNet"; then
+if bash -c "${SIMCUBE_DOTNET_TOOL_PATH}/SimCube.BuildTool -t DotNet --packableProjects=$1 --containerConfig=$2"; then
     # no op
     exit_code=$?
     if [[ $exit_code -eq $zero ]]; then
