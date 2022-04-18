@@ -2,14 +2,6 @@ name: SimCube BuildTool
 description: Executes the SimCube Build Tool.
 
 inputs:
-  packableProjects:
-    description: Base64 encoded json payload for Packable Project settings.
-    required: false
-    default: "e30="
-  containerConfig:
-    description: Base64 encoded json payload for OCI Images to Build.
-    required: false
-    default: "e30="
   setupDotNet:
     description: Boolean flag which declares if dotnet should be setup.
     required: false
@@ -47,7 +39,7 @@ runs:
       shell: bash
       
     - name: Run Script
-      run: ${GITHUB_ACTION_PATH}/script.sh ${{ inputs.packableProjects }} ${{ inputs.containerConfig }}
+      run: ${GITHUB_ACTION_PATH}/script.sh
       shell: bash
       
     - run: echo "::remove-matcher owner=bash-action::"
