@@ -7,7 +7,7 @@ toolbinary="simcubebuildtool"
 
 echo "SimCube.BuildTool"
 
-if bash -c "${SIMCUBE_DOTNET_TOOL_PATH}/${toolbinary} -t DotNet"; then
+if bash -c "${SIMCUBE_DOTNET_TOOL_PATH}/${toolbinary} -t DotNet -v Diagnostic"; then
     # no op
     exit_code=$?
     if [[ $exit_code -eq $zero ]]; then
