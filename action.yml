@@ -32,8 +32,8 @@ runs:
     - if: ${{ inputs.installRequired == 'true' }}
       shell: bash
       run: |
-        dotnet tool upgrade -g SimCube.BuildTool
-        dotnet tool upgrade -g dotnet-sonarscanner
+        dotnet tool update -g SimCube.BuildTool
+        dotnet tool update -g dotnet-sonarscanner
         
     - run: echo "::add-matcher::${GITHUB_ACTION_PATH}/matcher.json"
       shell: bash
